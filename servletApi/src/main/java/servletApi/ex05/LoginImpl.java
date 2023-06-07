@@ -1,4 +1,4 @@
-package servletAPI.ex05;
+package servletApi.ex05;
 
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;

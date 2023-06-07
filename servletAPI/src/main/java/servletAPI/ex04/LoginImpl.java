@@ -1,12 +1,12 @@
-package servletAPI.ex04;
+package servletApi.ex04;
 
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
 
 public class LoginImpl implements HttpSessionBindingListener {
-	String user_id;
-	String user_pwd;
-	static int total_user=0;
+	public String user_id;
+	public String user_pwd;
+	public static int total_user=0;
 	
 	//생성자
 	public LoginImpl() {

@@ -1,4 +1,4 @@
-package servletAPI.ex05;
+package servletApi.ex05;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import servletAPI.ex05.LoginImpl;
+import servletApi.ex05.LoginImpl;
 
 @WebServlet("/login2")
 public class LoginTest extends HttpServlet {

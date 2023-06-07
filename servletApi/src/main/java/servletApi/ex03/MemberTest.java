@@ -1,4 +1,4 @@
-package servletAPI.ex03;
+package servletApi.ex03;
 
 import java.io.IOException;
 import java.io.PrintWriter;

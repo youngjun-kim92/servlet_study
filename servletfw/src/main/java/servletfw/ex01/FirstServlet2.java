@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/first2")
 public class FirstServlet2 extends HttpServlet {
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out=response.getWriter();
+		PrintWriter out = response.getWriter();
 		out.print("조금 후에 새로운 페이지로 이동합니다.");
-		response.addHeader("Refresh", "3;url=second2");
+		response.addHeader("Refresh", "3;url=second2"); //3초 후에 url로 페이지 이동
+		
 	}
 
 }

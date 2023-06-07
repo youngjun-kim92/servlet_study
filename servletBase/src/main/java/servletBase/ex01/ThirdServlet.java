@@ -13,19 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 public class ThirdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("doGet메서드 호출>>>>third");
+		System.out.println("init메서드 호출됨>>>>>third");
 	}
-
 	
 	public void destroy() {
-		System.out.println("destroy메서드 호출>>>>third");
+		System.out.println("destroy메서드 호출됨>>>>>third");
 	}
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet메서드 호출>>>>third");
+		System.out.println("doGet메서드 호출됨>>>>>third");
 	}
 
 }

@@ -13,7 +13,7 @@
   	<servlet-name>base</servlet-name>
   	<servlet-class>servletBase.ex01.FirstServlet</servlet-class>
   </servlet>
-  <servlet>
+   <servlet>
   	<servlet-name>base2</servlet-name>
   	<servlet-class>servletBase.ex01.SecondServlet</servlet-class>
   </servlet>

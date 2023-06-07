@@ -14,27 +14,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/cFile")
 public class ContextFileServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out=response.getWriter();
-		ServletContext context=getServletContext();
-		InputStream inputS=context.getResourceAsStream("/WEB-INF/bin/init.txt");			//저장된 파일을 읽어옴
-		BufferedReader buffer=new BufferedReader(new InputStreamReader(inputS));
-		String menu=null, menu_member=null, menu_order=null, menu_goods=null;
-		while((menu=buffer.readLine())!=null) {
-			StringTokenizer tokenizer=new StringTokenizer(menu,",");
-			menu_member=tokenizer.nextToken();
-			menu_order=tokenizer.nextToken();
-			menu_goods=tokenizer.nextToken();
+		PrintWriter out = response.getWriter();
+		ServletContext context = getServletContext();
+		//InputStream: 파일 읽어오는것 / OutStream : 파일 저장
+		InputStream inputS = context.getResourceAsStream("/WEB-INF/bin/init.txt");
+		//파일은 buffer을 이용하여 하나씩 담음
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(inputS));
+		//못읽어올 수 있으니까 초기값 null로 설정
+		String menu = null, menu_member = null, menu_order=null, menu_goods = null;
+		//얼마나 있는지 모르니까 while문으로
+		//readLine(): 한줄을 읽어오는 메소드
+		while((menu=buffer.readLine()) != null ) {
+			//menu를 ","로 구분해서 tokenizer에 넣음 
+			StringTokenizer tokenizer = new StringTokenizer(menu, ",");
+			menu_member = tokenizer.nextToken();
+			menu_order = tokenizer.nextToken();
+			menu_goods = tokenizer.nextToken();
 		}
 		out.print("<html><body>");
-		out.print("<p>"+menu_member+"</p>");
-		out.print("<p>"+menu_order+"</p>");
-		out.print("<p>"+menu_goods+"</p>");
+		out.print("<p>" + menu_member + "</p>");
+		out.print("<p>" + menu_order + "</p>");
+		out.print("<p>" + menu_goods + "</p>");
 		out.print("</body></html>");
+		
 	}
 }

@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/get")
-public class GetCookie extends HttpServlet {
+public class getCookie extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out=response.getWriter();
-		Cookie[] value=request.getCookies();
-		for(int i=0;i<value.length;i++) {
+		PrintWriter out = response.getWriter();
+		//쿠키를 가져올 때는 배열로 가져와야 함
+		Cookie[] value = request.getCookies();
+		for(int i=0; i<value.length; i++) {
 			if(value[i].getName().equals("cookieTest")) {
-				out.print("<h3>쿠키값 : " +URLDecoder.decode(value[i].getValue(),"utf-8")+"</h3>");
+				out.print("<h3>쿠키값 : " + URLDecoder.decode(value[i].getValue(),"utf-8") + "</h3>");
 			}
 		}
 	}

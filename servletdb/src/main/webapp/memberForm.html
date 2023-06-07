@@ -5,24 +5,21 @@
 <title>회원가입창</title>
 <script type="text/javascript">
 	function fn_sendMember() {
-		let frmMember=document.frmMember;
-		let id=frmMember.id.value;
-		let pwd=frmMember.pwd.value;
-		let name=frmMember.name.value;
-		let email=frmMember.email.value;
-		if(id.length==0||id=="") {
+		let frmMember = document.frmMember;//객체정보를 담은 변수 frmMember
+		let id = frmMember.id.value;
+		let pwd = frmMember.pwd.value;
+		let name = frmMember.name.value;
+		let email = frmMember.email.value;
+		if(id.length == 0 || id.trim() == "") {
 			alert("아이디는 필수입니다.");
-		}
-		else if(pwd.length==0||pwd=="") {
+		} else if(pwd.length == 0 || pwd == "") {
 			alert("비밀번호는 필수입니다.");
-		}
-		else if(name.length==0||name=="") {
+		} else if(name.length == 0 || name == "") {
 			alert("이름은 필수입니다.");
-		}
-		else {
-			frmMember.method="post";	//전송방법을 지정
-			frmMember.action="member";  //서블릿 매핑 이름을 지정
-			frmMember.submit();			//서블릿으로 전송
+		} else {
+			frmMember.method = "post"; //전송방법 지정
+			frmMember.action = "member"; //서블릿 매핑 이름을 지정
+			frmMember.submit(); //서블릿으로 전송
 		}
 	}
 </script>
@@ -31,7 +28,7 @@
 	<form name="frmMember">
 		<table>
 			<tr>
-				<th>회원가입</th>
+			<th>회원가입</th>
 			</tr>
 			<tr>
 				<td>아이디</td>
@@ -52,7 +49,7 @@
 		</table>
 		<input type="hidden" name="command" value="addMember">
 		<input type="button" value="가입하기" onclick="fn_sendMember()">
-		<input type="reset" value="다시입력">
+		<input type="reset" value="다시입력">		
 	</form>
 </body>
 </html>

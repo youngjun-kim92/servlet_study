@@ -5,12 +5,14 @@
 <title>팝업창</title>
 <script type="text/javascript">
 	function setPopup(obj) {
-		if(obj.checked==true) {
-			let exDate=new Date();
-			let days=1;
-			exDate.setDate(exDate.getDate()+days);
-			document.cookie="ntpop=true;path=/;expires="+exDate.toGMTString();
-			window.close();
+		if(obj.checked == true) {
+			let exDate = new Date();
+			let days = 1; // 1: 하루, 2: 2일..
+			exDate.setDate(exDate.getDate()+days); //getDate() 날(일)만 가져옴
+			//; 구분자, path : 쿠키 경로 , / : 기본경로, expires: 얼마동안 할지 시간
+			//toGMTString() : 표준시간형태
+			document.cookie="ntpop=true;path=/;expires=" + exDate.toGMTString();
+			window.close(); //팝업창 닫아주기
 		}
 	}
 </script>
@@ -20,6 +22,7 @@
 	<p>주말 잘 보내세요^^</p>
 	<p>다음주에 JSP수업이 시작!!</p>
 	<p>회원정보, 게시판 구현</p>
+	<!-- this: 현재창 이라는 HTML 객체 -->	
 	<input type="checkbox" onclick="setPopup(this)">오늘 더 이상 팝업창 띄우지 않기
 </body>
 </html>

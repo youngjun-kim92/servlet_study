@@ -9,6 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
   <context-param>
   	<param-name>menu_member</param-name>
   	<param-value>회원등록 회원조회 회원수정</param-value>
@@ -21,8 +22,9 @@
   	<param-name>menu_goods</param-name>
   	<param-value>상품조회 상품등록 상품수정 상품삭제</param-value>
   </context-param>
+  <!-- 
   <servlet>
-  	<servlet-name>init</servlet-name>
+  	<servlet-name>initp1</servlet-name>
   	<servlet-class>servletfw.ex07.InitParamServlet</servlet-class>
   	<init-param>
   		<param-name>email</param-name>
@@ -41,4 +43,5 @@
   	<servlet-name>init</servlet-name>
   	<url-pattern>initp2</url-pattern>
   </servlet-mapping>
+   -->
 </web-app>

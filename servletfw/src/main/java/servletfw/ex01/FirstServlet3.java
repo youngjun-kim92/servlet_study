@@ -9,16 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/first3")
 public class FirstServlet3 extends HttpServlet {
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out=response.getWriter();
+		PrintWriter out = response.getWriter();
 		out.print("<script type='text/javascript'>");
 		out.print("location.href='second3'");
-		out.print("</script>");
+		out.print("</script>");		
 	}
 
 }

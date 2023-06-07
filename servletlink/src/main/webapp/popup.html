@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팝업창</title>
+<script type="text/javascript">
+	function setPopup(obj) {
+		if(obj.checked==true) {
+			let exDate=new Date();
+			let days=1;
+			exDate.setDate(exDate.getDate()+days);
+			document.cookie="ntpop=true;path=/;expires="+exDate.toGMTString();
+			window.close();
+		}
+	}
+</script>
+</head>
+<body>
+	<h3>공지사항</h3>
+	<p>주말 잘 보내세요^^</p>
+	<p>다음주에 JSP수업이 시작!!</p>
+	<p>회원정보, 게시판 구현</p>
+	<input type="checkbox" onclick="setPopup(this)">오늘 더 이상 팝업창 띄우지 않기
+</body>
+</html>
